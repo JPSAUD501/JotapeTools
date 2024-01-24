@@ -1,0 +1,27 @@
+{
+  "name": "jotapetools",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start:cnpj": "ts-node index/appCnpj.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "eslint": "^8.32.0",
+    "eslint-config-standard-with-typescript": "^31.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@aternus/csv-to-xlsx": "^2.1.2",
+    "axios": "^1.2.3",
+    "dotenv": "^16.0.1",
+    "fast-csv": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "zod": "^3.20.2"
+  }
+}
