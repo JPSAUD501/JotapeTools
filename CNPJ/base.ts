@@ -51,7 +51,7 @@ export async function runCnpj (): Promise<{
   err: string
 }> {
   console.log('Iniciando leitura dos CNPJ\'s')
-  const cnpjs = fs.readFileSync('Exports/cnpjs.txt', 'utf8').split('\n')
+  const cnpjs = fs.readFileSync('Exports/cnpj.txt', 'utf8').split('\n')
   const parsedCnpjs: string[] = []
   for (const cnpj of cnpjs) {
     const cnpjParsed = cnpj.replace(/\D/g, '')
@@ -118,7 +118,7 @@ export async function runCnpj (): Promise<{
     })
   }
   await new Promise((resolve, reject) => {
-    csv.writeToPath('Exports/cnpjs.csv', parsedCnpjsInfo,
+    csv.writeToPath('Exports/cnpj.csv', parsedCnpjsInfo,
       {
         headers: true
       })
@@ -127,13 +127,13 @@ export async function runCnpj (): Promise<{
   })
   console.log('CNPJ\'s escritos')
   console.log('Convertendo para Excel')
-  csvToXlsx.convertCsvToXlsx('Exports/cnpjs.csv', 'Exports/cnpjs.xlsx', {
+  csvToXlsx.convertCsvToXlsx('Exports/cnpj.csv', 'Exports/cnpj.xlsx', {
     sheetName: 'CNPJs',
     overwrite: true
   })
   console.log('Convertido para Excel')
   console.log('Apagando CSV temporário')
-  fs.unlinkSync('Exports/cnpjs.csv')
+  fs.unlinkSync('Exports/cnpj.csv')
   console.log('CSV temporário apagado')
   console.log('Finalizando JotapeTools-CNPJ')
   return {
