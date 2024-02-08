@@ -1,5 +1,6 @@
 @echo off
 echo Atualizando repositorio...
+git stash
 git pull
 echo Instalando dependencias...
 call npm install
